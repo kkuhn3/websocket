@@ -7,6 +7,7 @@ class Socket implements MessageComponentInterface {
 	protected $clients;
 	private $subscriptions;
 	private $users;
+	private $queues;
 
 	public function __construct() {
 		$this->clients = new \SplObjectStorage;
