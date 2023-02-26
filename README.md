@@ -4,7 +4,17 @@ A php websocket server.
 
 ## Description
 
-Uses "subscriptions" and "queues" to pair those connecting to the server. The server has a rudimentary 1v1 matchmaking and allows clients to limit messages they recieve. Has a ping-pong feature. Otherwise the websocket server works like a simple one to many broadcast server.
+Uses "subscriptions"  to pair those connecting to the server. 
+
+Features:
+* Ping
+	* Sends pong to the client, disables all broadcasts of that message.
+* Subscribe
+	* Adds the client to a specific subscription group on which to send and recieve messages.
+* Queue
+	* Adds the client to a queue. The next client added to the queue is then matched with the first client. These two clients are then removed from the queue and put into a subscription group by themselves.
+* Party
+	* Adds the client to a group which can accept any number of clients. Once a client sends "finalize" the whole party is then moved to a subscription. 
 
 ## Getting Started
 
